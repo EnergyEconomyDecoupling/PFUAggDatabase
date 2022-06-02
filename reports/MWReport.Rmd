@@ -1,0 +1,50 @@
+---
+title: "MWReport"
+author: "Zeke Marshall"
+date: '`r parsedate::format_iso_8601(Sys.time())`'
+output: pdf_document
+knit: (function(inputFile, encoding) 
+  {rmarkdown::render(inputFile, 
+  encoding = encoding,
+  output_file = paste0(substr(inputFile,1,nchar(inputFile)-4), "-", Sys.Date(),'.pdf'),
+  output_dir = paste0(PFUSetup::get_abs_paths()$reports_dest_folder, "/Muscle Work Reports/", Sys.Date(), sep = "")
+  ) 
+  })
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+# library(ggplot2)
+# library(knitr)
+# library(magrittr)
+# library(MKHthemes)
+# library(parsedate)
+# library(rprojroot)
+# library(PFUDatabase)
+# library(targets)
+# 
+# # Set up the root directory
+# root <- rprojroot::is_rstudio_project
+# # And the cache
+# cache_path <- root$find_file("_targets")
+```
+
+## Introduction
+
+This report shows graphs of Primary, Final, and Useful muscle work (MW) in 
+energy and exergy terms for each of the Machine (Species) - Destination
+combinations in the PFU Database.
+
+Note that numbers following "##" are the row number in the `MWGraphs` data frame.
+
+
+```{r, echo = FALSE}
+# mw_plots <- targets::tar_read_raw(PFUDatabase::target_names$mw_graphs, store = cache_path) %>% 
+#   magrittr::extract2("Plots")
+```
+
+
+```{r, fig.width=6.5, fig.height=2.5, echo=FALSE}
+# mw_plots
+```
+
