@@ -5,19 +5,22 @@
 \title{Create MW graphs in a data frame}
 \usage{
 agg_plots_df(
-  .sutdata,
-  countries,
+  .df,
   country = IEATools::iea_cols$country,
   year = IEATools::iea_cols$year,
-  e_dot = IEATools::iea_cols$e_dot
+  e_dot = IEATools::iea_cols$e_dot,
+  country_colname = IEATools::iea_cols$country,
+  method_colname = IEATools::iea_cols$method,
+  energy_type_colname = IEATools::iea_cols$energy_type,
+  gross_net_colname = PFUAggDatabase::sea_cols$gross_net_colname
 )
 }
 \arguments{
-\item{country, year, e_dot}{See \code{IEATools::iea_cols}.}
-
 \item{.df}{An data frame containing aggregated PFU energy and exergy, usually
 produced by the \code{calculate_pfu_aggregations} function and stored
 as the target \code{...}.}
+
+\item{country, year, e_dot}{See \code{IEATools::iea_cols}.}
 }
 \value{
 A data frame containing a list column of \code{ggplot2} exergy-to-energy ratio graphs.

@@ -14,8 +14,6 @@
 #' @return A `ggplot2` graph object
 #'
 #' @export
-#'
-#' @examples
 create_agg_graph <- function(.df,
                              country_val,
                              method_val,
@@ -117,8 +115,6 @@ create_agg_graph <- function(.df,
 #' @importFrom utils data
 #'
 #' @export
-#'
-#' @examples
 agg_plots_df <- function(.df,
                          country = IEATools::iea_cols$country,
                          year = IEATools::iea_cols$year,

@@ -9,7 +9,8 @@ create_agg_graph(
   country_val,
   method_val,
   energy_type_val,
-  country = IEATools::iea_cols$country,
+  gross_net_val,
+  country_colname = IEATools::iea_cols$country,
   year = IEATools::iea_cols$year,
   e_dot = IEATools::iea_cols$e_dot,
   stage_colname = PFUAggDatabase::sea_cols$stage_colname,
@@ -17,7 +18,9 @@ create_agg_graph(
   sector_colname = PFUAggDatabase::sea_cols$sector_colname,
   e_product_colname = PFUAggDatabase::sea_cols$e_product_colname,
   method_colname = IEATools::iea_cols$method,
-  energy_type_colname = IEATools::iea_cols$energy_type
+  energy_type_colname = IEATools::iea_cols$energy_type,
+  gross_net_colname = PFUAggDatabase::sea_cols$gross_net_colname,
+  ...
 )
 }
 \arguments{
